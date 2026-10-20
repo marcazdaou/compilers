@@ -1,91 +1,55 @@
-# j-- Compiler
+# j-- Compiler Extensions
 
-A full compiler for **j--**, a Java subset language, targeting **JVM bytecode**. Implemented a complete compilation pipeline from raw source code to executable `.class` files, extending a base compiler with 6 new types and 15+ language features.
+My extensions to **j--**, a compiler for a subset of Java that targets **JVM bytecode** (the teaching compiler
+from *Introduction to Compiler Construction in a Java World*). Across the scanner, the parser, the JavaCC
+grammar, semantic analysis and code generation, I added new types, operators and control-flow statements.
 
-## Compilation Pipeline
+This repository contains the files I added or modified; they plug into the full j-- code base from the course.
+
+## Pipeline
 
 ```
-Source (.j--) → Lexer/Scanner → Parser → AST → Semantic Analysis → JVM Bytecode (.class)
+j-- source → Scanner (tokens) → Parser (AST) → analyze() (types, scopes) → codegen() → JVM .class file
 ```
 
-## Features Implemented
+Each feature below needed changes at every stage: new tokens, grammar rules, AST node classes with
+`analyze()` type checking, and `codegen()` bytecode emission.
 
-### New Types & Literals
-| Feature | File |
+## What I added
+
+**Types and literals**
+- `double` and `long` primitive types with literals (`3.14`, `42L`): `JLiteralDouble`, `JLiteralLong`, scanner and grammar rules
+
+**Operators** (`JBinaryExpression`, `JUnaryExpression`, `JComparisonExpression`, `JBooleanBinaryExpression`, `JAssignment`)
+- Arithmetic `-`, `/`, `%` and unary `+`
+- Comparisons `>=`, `<`, `!=` (alongside the existing ones)
+- Logical `||`
+- Pre/post increment and decrement (`++x`, `x++`, `--x`, `x--`)
+- Compound assignment `-=`, `*=`, `/=`, `%=`
+- Ternary conditional `a ? b : c` (`JConditionalExpression`)
+
+**Statements**
+- `do-while` (`JDoStatement`) and `for` (`JForStatement`) loops
+- `break` and `continue` that target the innermost enclosing loop or switch (`JBreakStatement`, `JContinueStatement`)
+- `switch` (`JSwitchStatement`): emits **TABLESWITCH** or **LOOKUPSWITCH** by comparing their estimated
+  space and time cost, the same heuristic `javac` uses
+
+**Grammar**
+- `j-- (2).jj`: the JavaCC version of the grammar, updated with the new tokens and rules
+
+## Files
+
+| Files | Stage |
 |---|---|
-| `double` literals & arithmetic | `JLiteralDouble.java` |
-| `long` literals & arithmetic | `JLiteralLong.java` |
-| Array types & initializers | `JArrayExpression.java`, `JArrayInitializer.java` |
-| Ternary expression (`a ? b : c`) | `JConditionalExpression.java` |
+| `Scanner.java`, `TokenInfo.java` | Lexical analysis: new keywords, literals and operators |
+| `Parser.java`, `j-- (2).jj` | Recursive-descent parser and JavaCC grammar |
+| `J*.java` | AST nodes: parsing, semantic analysis and bytecode generation for each construct |
 
-### Control Flow
-| Feature | File |
-|---|---|
-| `do-while` loop | `JDoStatement.java` |
-| `for` loop (init / condition / update) | `JForStatement.java` |
-| `switch` with `TABLESWITCH` / `LOOKUPSWITCH` optimization | `JSwitchStatement.java` |
-| `break` with correct nested-loop semantics | `JBreakStatement.java` |
-| `continue` with correct nested-loop semantics | `JContinueStatement.java` |
-| `return` in typed and void methods | `JReturnStatement.java` |
+## Build
 
-### Operators & Expressions
-| Feature | File |
-|---|---|
-| Compound assignment (`+=`, `-=`, `*=`, `/=`) | `JAssignment.java` |
-| Full comparison set (`<=`, `>`, `>=`, `!=`) | `JComparisonExpression.java` |
-| Boolean binary (`&&`, `\|\|`) | `JBooleanBinaryExpression.java` |
-| Arithmetic binary (`+`, `-`, `*`, `/`, `%`) | `JBinaryExpression.java` |
-| Unary operators (pre/post `++`, `--`, `!`) | `JUnaryExpression.java` |
+Copy these files into the j-- source tree from the course (`jminusminus` package), replacing the originals,
+then build and run j-- as described in that distribution.
 
-### Declarations
-| Feature | File |
-|---|---|
-| Variable declarations with initializers | `JVariableDeclaration.java`, `JVariable.java` |
-| Constructor declarations | `JConstructorDeclaration.java` |
-| Method declarations with return types | `JMethodDeclaration.java` |
+## Concepts
 
-## Architecture
-
-| File | Role |
-|---|---|
-| `Scanner.java` | Tokenizer — converts source characters into a token stream |
-| `Parser.java` | Recursive-descent parser — builds the AST from tokens |
-| `J*.java` | AST node classes — one per language construct |
-| `j-- (2).jj` | JavaCC grammar specification |
-
-## Technologies
-
-- **Java** — compiler implementation
-- **JavaCC** — grammar & parser generation
-- **JVM Bytecode** — code generation target (`.class` files)
-
-## Build & Run
-
-```bash
-# Compile the compiler
-javac *.java
-
-# Compile a j-- source file
-java Main MyProgram.j--
-
-# Run the generated JVM bytecode
-java MyProgram
-```
-
-## Example
-
-```java
-// test.j-- — features exercised:  for loop, ternary, long literal, switch
-public class Test {
-    public static void main(String[] args) {
-        long n = 100L;
-        for (int i = 0; i < n; i++) {
-            String label = (i % 2 == 0) ? "even" : "odd";
-            switch (i % 3) {
-                case 0: System.out.println(label + "-fizz"); break;
-                default: System.out.println(label);
-            }
-        }
-    }
-}
-```
+Lexical analysis · recursive-descent parsing · abstract syntax trees · type checking · JVM bytecode generation
