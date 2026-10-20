@@ -90,9 +90,3 @@ javacc_frontend/     The same for the JavaCC front end
 langspec.txt         The j-- language specification
 build.xml            Ant build
 ```
-
-## Credits
-
-The base j-- compiler, its language specification and the example programs come from the j-- distribution by
-Bill Campbell, Swami Iyer and Bahar Akbal-Delibaş, used in the compilers course at the University of Massachusetts
-Boston. The language extensions, bug fixes and test suite are my work.
