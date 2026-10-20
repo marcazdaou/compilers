@@ -8,6 +8,10 @@ import static jminusminus.CLConstants.IF_ACMPNE;
 import static jminusminus.CLConstants.IF_ICMPEQ;
 import static jminusminus.CLConstants.IF_ICMPNE;
 import static jminusminus.CLConstants.LCMP;
+import static jminusminus.CLConstants.IFNE;
+import static jminusminus.CLConstants.IFEQ;
+import static jminusminus.CLConstants.DCMPG;
+import static jminusminus.CLConstants.DCMPL;
 /**
  * This abstract base class is the AST node for binary expressions that return booleans.
  */
@@ -23,6 +27,34 @@ abstract class JBooleanBinaryExpression extends JBinaryExpression {
 
     protected JBooleanBinaryExpression(int line, String operator, JExpression lhs, JExpression rhs) {
         super(line, operator, lhs, rhs);
+    }
+
+    /**
+     * Emits the branch for a numeric comparison whose two operands are already on the stack.
+     *
+     * int operands use a single IF_ICMPxx instruction. long and double operands are first reduced
+     * to an int (-1, 0 or 1) with LCMP, DCMPL or DCMPG, followed by the matching IFxx instruction.
+     * For doubles, DCMPG is used for {@code <} and {@code <=} and DCMPL otherwise, so that any
+     * comparison involving NaN is false, exactly as javac compiles it.
+     *
+     * @param output       the code emitter.
+     * @param type         the operand type.
+     * @param intOp        IF_ICMPxx instruction for int operands.
+     * @param zeroOp       IFxx instruction applied to the result of LCMP / DCMPx.
+     * @param nanIsGreater true to use DCMPG (NaN compares as greater), false for DCMPL.
+     * @param targetLabel  the branch target.
+     */
+    protected static void compareAndBranch(CLEmitter output, Type type, int intOp, int zeroOp,
+                                           boolean nanIsGreater, String targetLabel) {
+        if (type == Type.LONG) {
+            output.addNoArgInstruction(LCMP);
+            output.addBranchInstruction(zeroOp, targetLabel);
+        } else if (type == Type.DOUBLE) {
+            output.addNoArgInstruction(nanIsGreater ? DCMPG : DCMPL);
+            output.addBranchInstruction(zeroOp, targetLabel);
+        } else {
+            output.addBranchInstruction(intOp, targetLabel);
+        }
     }
 
     /**
@@ -76,7 +108,8 @@ class JEqualOp extends JBooleanBinaryExpression {
         if (lhs.type().isReference()) {
             output.addBranchInstruction(onTrue ? IF_ACMPEQ : IF_ACMPNE, targetLabel);
         } else {
-            output.addBranchInstruction(onTrue ? IF_ICMPEQ : IF_ICMPNE, targetLabel);
+            compareAndBranch(output, lhs.type(), onTrue ? IF_ICMPEQ : IF_ICMPNE, onTrue ? IFEQ : IFNE,
+                    false, targetLabel);
         }
     }
 }
@@ -157,13 +190,15 @@ class JLogicalOrOp extends JBooleanBinaryExpression {
      */
     public void codegen(CLEmitter output, String targetLabel, boolean onTrue) {
         if (onTrue) {
-            String falseLabel = output.createLabel();
-            lhs.codegen(output, falseLabel, false);
+            // Jump to the target if either side is true (the rhs is skipped when the lhs is true).
+            lhs.codegen(output, targetLabel, true);
             rhs.codegen(output, targetLabel, true);
-            output.addLabel(falseLabel);
         } else {
-            lhs.codegen(output, targetLabel, false);
+            // Jump to the target only if both sides are false: a true lhs skips the rhs entirely.
+            String trueLabel = output.createLabel();
+            lhs.codegen(output, trueLabel, true);
             rhs.codegen(output, targetLabel, false);
+            output.addLabel(trueLabel);
         }
     }
 }
@@ -206,13 +241,8 @@ class JNotEqualOp extends JBooleanBinaryExpression {
         if (lhs.type().isReference())
             output.addBranchInstruction(onTrue ? IF_ACMPNE : IF_ACMPEQ, targetLabel);
         else {
-            if (lhs.type() == Type.LONG) {
-                output.addNoArgInstruction(LCMP);
-                output.addNoArgInstruction(ICONST_1);
-                output.addBranchInstruction(onTrue ? IF_ICMPNE : IF_ICMPEQ, targetLabel);
-            } else {
-                output.addBranchInstruction(onTrue ? IF_ICMPNE : IF_ICMPEQ, targetLabel);
-            }
+            compareAndBranch(output, lhs.type(), onTrue ? IF_ICMPNE : IF_ICMPEQ, onTrue ? IFNE : IFEQ,
+                    false, targetLabel);
         }
     }
 }

@@ -58,8 +58,8 @@ class JConditionalExpression extends JExpression {
     String elseLabel = output.createLabel();
     String endLabel = output.createLabel();
 
-    // Generate code for the condition (if false, jump to elseLabel)
-    condition.codegen(output);
+    // Generate code for the condition (if false, jump to elseLabel). The branching form of
+    // codegen evaluates the condition itself, so it must not also be pushed onto the stack.
     condition.codegen(output, elseLabel, false);
 
     // Generate code for the thenPart 

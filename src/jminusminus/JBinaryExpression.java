@@ -101,6 +101,9 @@ class JMultiplyOp extends JBinaryExpression {
         } else if (lhs.type() == Type.DOUBLE) {
             rhs.type().mustMatchExpected(line(), Type.DOUBLE);
             type = Type.DOUBLE;
+        } else {
+            type = Type.ANY;
+            JAST.compilationUnit.reportSemanticError(line(), "Invalid operand types for %s", operator);
         }
 
         return this;
@@ -157,6 +160,9 @@ class JPlusOp extends JBinaryExpression {
         } else if (lhs.type() == Type.DOUBLE) {
             rhs.type().mustMatchExpected(line(), Type.DOUBLE);
             type = Type.DOUBLE;
+        } else {
+            type = Type.ANY;
+            JAST.compilationUnit.reportSemanticError(line(), "Invalid operand types for %s", operator);
         }
 
         return this;
@@ -206,6 +212,9 @@ class JSubtractOp extends JBinaryExpression {
         } else if (lhs.type() == Type.DOUBLE) {
             rhs.type().mustMatchExpected(line(), Type.DOUBLE);
             type = Type.DOUBLE;
+        } else {
+            type = Type.ANY;
+            JAST.compilationUnit.reportSemanticError(line(), "Invalid operand types for %s", operator);
         }
 
         return this;
@@ -255,6 +264,9 @@ class JDivideOp extends JBinaryExpression {
         } else if (lhs.type() == Type.DOUBLE) {
             rhs.type().mustMatchExpected(line(), Type.DOUBLE);
             type = Type.DOUBLE;
+        } else {
+            type = Type.ANY;
+            JAST.compilationUnit.reportSemanticError(line(), "Invalid operand types for %s", operator);
         }
 
         return this;
@@ -305,6 +317,9 @@ class JRemainderOp extends JBinaryExpression {
         } else if (lhs.type() == Type.DOUBLE) {
             rhs.type().mustMatchExpected(line(), Type.DOUBLE);
             type = Type.DOUBLE;
+        } else {
+            type = Type.ANY;
+            JAST.compilationUnit.reportSemanticError(line(), "Invalid operand types for %s", operator);
         }
 
         return this;

@@ -123,7 +123,8 @@ class JNegateOp extends JUnaryExpression {
         } else if (operand.type() == Type.DOUBLE) {
             type = Type.DOUBLE;
         } else {
-            type = Type.ANY; // Optional: flag as invalid or unexpected
+            type = Type.ANY;
+            JAST.compilationUnit.reportSemanticError(line(), "Invalid operand type for unary -");
         }
 
         return this;
@@ -281,6 +282,10 @@ class JUnaryPlusOp extends JUnaryExpression {
         }
         else if (operand.type() == Type.DOUBLE) {
             type = Type.DOUBLE;
+        }
+        else {
+            type = Type.ANY;
+            JAST.compilationUnit.reportSemanticError(line(), "Invalid operand type for unary +");
         }
         
         return this;

@@ -57,6 +57,9 @@ class JConstructorDeclaration extends JMethodDeclaration {
      * {@inheritDoc}
      */
     public JAST analyze(Context context) {
+        // Remember the class this constructor belongs to (codegen needs its superclass and field initializers)
+        definingClass = (JClassDeclaration) context.classContext().definition();
+
         // Create a new method context for this method
     MethodContext methodContext = new MethodContext(context, isStatic, returnType);
     this.context = methodContext;
@@ -79,12 +82,10 @@ class JConstructorDeclaration extends JMethodDeclaration {
         }
     }
 
-    // Analyze the method body and check for return statements
+    // Analyze the constructor body. Constructors never return a value, so (unlike methods)
+    // there is no "missing return statement" check here.
     if (body != null) {
         body = body.analyze(this.context);
-        if (returnType != Type.VOID && !methodContext.methodHasReturn()) {
-            JAST.compilationUnit.reportSemanticError(line(), "Non-void method must have a return statement");
-        }
     }
 
     return this;
