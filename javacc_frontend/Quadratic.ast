@@ -1,0 +1,446 @@
+{
+    "JCompilationUnit:1":
+    {
+        "source": "javacc_frontend/Quadratic.java",
+        "imports": ["java.lang.Double", "java.lang.Math", "java.lang.System"],
+        "JClassDeclaration:5":
+        {
+            "modifiers": ["public"],
+            "name": "Quadratic",
+            "super": "java.lang.Object",
+            "JMethodDeclaration:6":
+            {
+                "modifiers": ["public", "static"],
+                "returnType": "void",
+                "name": "main",
+                "parameters": [["args", "String[]"]],
+                "JBlock:6":
+                {
+                    "JVariableDeclaration:7":
+                    {
+                        "JVariableDeclarator:7":
+                        {
+                            "name": "a",
+                            "type": "double",
+                            "Initializer":
+                            {
+                                "JMessageExpression:7":
+                                {
+                                    "ambiguousPart": "Double",
+                                    "name": "parseDouble",
+                                    "Argument":
+                                    {
+                                        "JArrayExpression:7":
+                                        {
+                                            "TheArray":
+                                            {
+                                                "JVariable:7":
+                                                {
+                                                    "name": "args",
+                                                    "type": ""
+                                                }
+                                            },
+                                            "TheIndex":
+                                            {
+                                                "JLiteralInt:7":
+                                                {
+                                                    "type": "",
+                                                    "value": "0"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:8":
+                    {
+                        "JVariableDeclarator:8":
+                        {
+                            "name": "b",
+                            "type": "double",
+                            "Initializer":
+                            {
+                                "JMessageExpression:8":
+                                {
+                                    "ambiguousPart": "Double",
+                                    "name": "parseDouble",
+                                    "Argument":
+                                    {
+                                        "JArrayExpression:8":
+                                        {
+                                            "TheArray":
+                                            {
+                                                "JVariable:8":
+                                                {
+                                                    "name": "args",
+                                                    "type": ""
+                                                }
+                                            },
+                                            "TheIndex":
+                                            {
+                                                "JLiteralInt:8":
+                                                {
+                                                    "type": "",
+                                                    "value": "1"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:9":
+                    {
+                        "JVariableDeclarator:9":
+                        {
+                            "name": "c",
+                            "type": "double",
+                            "Initializer":
+                            {
+                                "JMessageExpression:9":
+                                {
+                                    "ambiguousPart": "Double",
+                                    "name": "parseDouble",
+                                    "Argument":
+                                    {
+                                        "JArrayExpression:9":
+                                        {
+                                            "TheArray":
+                                            {
+                                                "JVariable:9":
+                                                {
+                                                    "name": "args",
+                                                    "type": ""
+                                                }
+                                            },
+                                            "TheIndex":
+                                            {
+                                                "JLiteralInt:9":
+                                                {
+                                                    "type": "",
+                                                    "value": "2"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:11":
+                    {
+                        "JVariableDeclarator:11":
+                        {
+                            "name": "discriminant",
+                            "type": "double",
+                            "Initializer":
+                            {
+                                "JBinaryExpression:11":
+                                {
+                                    "operator": "-",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JBinaryExpression:11":
+                                        {
+                                            "operator": "*",
+                                            "type": "",
+                                            "Operand1":
+                                            {
+                                                "JVariable:11":
+                                                {
+                                                    "name": "b",
+                                                    "type": ""
+                                                }
+                                            },
+                                            "Operand2":
+                                            {
+                                                "JVariable:11":
+                                                {
+                                                    "name": "b",
+                                                    "type": ""
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JBinaryExpression:11":
+                                        {
+                                            "operator": "*",
+                                            "type": "",
+                                            "Operand1":
+                                            {
+                                                "JBinaryExpression:11":
+                                                {
+                                                    "operator": "*",
+                                                    "type": "",
+                                                    "Operand1":
+                                                    {
+                                                        "JCastOp:11":
+                                                        {
+                                                            "type": "double",
+                                                            "Expression":
+                                                            {
+                                                                "JLiteralInt:11":
+                                                                {
+                                                                    "type": "",
+                                                                    "value": "4"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "Operand2":
+                                                    {
+                                                        "JVariable:11":
+                                                        {
+                                                            "name": "a",
+                                                            "type": ""
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "Operand2":
+                                            {
+                                                "JVariable:11":
+                                                {
+                                                    "name": "c",
+                                                    "type": ""
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:12":
+                    {
+                        "JVariableDeclarator:12":
+                        {
+                            "name": "root1",
+                            "type": "double",
+                            "Initializer":
+                            {
+                                "JBinaryExpression:12":
+                                {
+                                    "operator": "/",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JBinaryExpression:12":
+                                        {
+                                            "operator": "+",
+                                            "type": "",
+                                            "Operand1":
+                                            {
+                                                "JUnaryExpression:12":
+                                                {
+                                                    "operator": "-",
+                                                    "type": "",
+                                                    "Operand":
+                                                    {
+                                                        "JVariable:12":
+                                                        {
+                                                            "name": "b",
+                                                            "type": ""
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "Operand2":
+                                            {
+                                                "JMessageExpression:12":
+                                                {
+                                                    "ambiguousPart": "Math",
+                                                    "name": "sqrt",
+                                                    "Argument":
+                                                    {
+                                                        "JVariable:12":
+                                                        {
+                                                            "name": "discriminant",
+                                                            "type": ""
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JBinaryExpression:12":
+                                        {
+                                            "operator": "*",
+                                            "type": "",
+                                            "Operand1":
+                                            {
+                                                "JCastOp:12":
+                                                {
+                                                    "type": "double",
+                                                    "Expression":
+                                                    {
+                                                        "JLiteralInt:12":
+                                                        {
+                                                            "type": "",
+                                                            "value": "2"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "Operand2":
+                                            {
+                                                "JVariable:12":
+                                                {
+                                                    "name": "a",
+                                                    "type": ""
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:13":
+                    {
+                        "JVariableDeclarator:13":
+                        {
+                            "name": "root2",
+                            "type": "double",
+                            "Initializer":
+                            {
+                                "JBinaryExpression:13":
+                                {
+                                    "operator": "/",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JBinaryExpression:13":
+                                        {
+                                            "operator": "-",
+                                            "type": "",
+                                            "Operand1":
+                                            {
+                                                "JUnaryExpression:13":
+                                                {
+                                                    "operator": "-",
+                                                    "type": "",
+                                                    "Operand":
+                                                    {
+                                                        "JVariable:13":
+                                                        {
+                                                            "name": "b",
+                                                            "type": ""
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "Operand2":
+                                            {
+                                                "JMessageExpression:13":
+                                                {
+                                                    "ambiguousPart": "Math",
+                                                    "name": "sqrt",
+                                                    "Argument":
+                                                    {
+                                                        "JVariable:13":
+                                                        {
+                                                            "name": "discriminant",
+                                                            "type": ""
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JBinaryExpression:13":
+                                        {
+                                            "operator": "*",
+                                            "type": "",
+                                            "Operand1":
+                                            {
+                                                "JCastOp:13":
+                                                {
+                                                    "type": "double",
+                                                    "Expression":
+                                                    {
+                                                        "JLiteralInt:13":
+                                                        {
+                                                            "type": "",
+                                                            "value": "2"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "Operand2":
+                                            {
+                                                "JVariable:13":
+                                                {
+                                                    "name": "a",
+                                                    "type": ""
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JStatementExpression:15":
+                    {
+                        "JMessageExpression:15":
+                        {
+                            "ambiguousPart": "System.out",
+                            "name": "println",
+                            "Argument":
+                            {
+                                "JBinaryExpression:15":
+                                {
+                                    "operator": "+",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JBinaryExpression:15":
+                                        {
+                                            "operator": "+",
+                                            "type": "",
+                                            "Operand1":
+                                            {
+                                                "JVariable:15":
+                                                {
+                                                    "name": "root1",
+                                                    "type": ""
+                                                }
+                                            },
+                                            "Operand2":
+                                            {
+                                                "JLiteralString:15":
+                                                {
+                                                    "type": "",
+                                                    "value": " "
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JVariable:15":
+                                        {
+                                            "name": "root2",
+                                            "type": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

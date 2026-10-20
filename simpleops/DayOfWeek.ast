@@ -1,0 +1,624 @@
+{
+    "JCompilationUnit:1":
+    {
+        "source": "simpleops/DayOfWeek.java",
+        "imports": ["java.lang.Integer", "java.lang.System"],
+        "JClassDeclaration:4":
+        {
+            "modifiers": ["public"],
+            "name": "DayOfWeek",
+            "super": "java.lang.Object",
+            "JMethodDeclaration:5":
+            {
+                "modifiers": ["public", "static"],
+                "returnType": "void",
+                "name": "main",
+                "parameters": [["args", "String[]"]],
+                "JBlock:5":
+                {
+                    "JVariableDeclaration:6":
+                    {
+                        "JVariableDeclarator:6":
+                        {
+                            "name": "m",
+                            "type": "int",
+                            "Initializer":
+                            {
+                                "JMessageExpression:6":
+                                {
+                                    "ambiguousPart": "Integer",
+                                    "name": "parseInt",
+                                    "Argument":
+                                    {
+                                        "JArrayExpression:6":
+                                        {
+                                            "TheArray":
+                                            {
+                                                "JVariable:6":
+                                                {
+                                                    "name": "args",
+                                                    "type": ""
+                                                }
+                                            },
+                                            "TheIndex":
+                                            {
+                                                "JLiteralInt:6":
+                                                {
+                                                    "type": "",
+                                                    "value": "0"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:7":
+                    {
+                        "JVariableDeclarator:7":
+                        {
+                            "name": "d",
+                            "type": "int",
+                            "Initializer":
+                            {
+                                "JMessageExpression:7":
+                                {
+                                    "ambiguousPart": "Integer",
+                                    "name": "parseInt",
+                                    "Argument":
+                                    {
+                                        "JArrayExpression:7":
+                                        {
+                                            "TheArray":
+                                            {
+                                                "JVariable:7":
+                                                {
+                                                    "name": "args",
+                                                    "type": ""
+                                                }
+                                            },
+                                            "TheIndex":
+                                            {
+                                                "JLiteralInt:7":
+                                                {
+                                                    "type": "",
+                                                    "value": "1"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:8":
+                    {
+                        "JVariableDeclarator:8":
+                        {
+                            "name": "y",
+                            "type": "int",
+                            "Initializer":
+                            {
+                                "JMessageExpression:8":
+                                {
+                                    "ambiguousPart": "Integer",
+                                    "name": "parseInt",
+                                    "Argument":
+                                    {
+                                        "JArrayExpression:8":
+                                        {
+                                            "TheArray":
+                                            {
+                                                "JVariable:8":
+                                                {
+                                                    "name": "args",
+                                                    "type": ""
+                                                }
+                                            },
+                                            "TheIndex":
+                                            {
+                                                "JLiteralInt:8":
+                                                {
+                                                    "type": "",
+                                                    "value": "2"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:10":
+                    {
+                        "JVariableDeclarator:10":
+                        {
+                            "name": "y0",
+                            "type": "int",
+                            "Initializer":
+                            {
+                                "JBinaryExpression:10":
+                                {
+                                    "operator": "-",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JUnaryExpression:10":
+                                        {
+                                            "operator": "+",
+                                            "type": "",
+                                            "Operand":
+                                            {
+                                                "JVariable:10":
+                                                {
+                                                    "name": "y",
+                                                    "type": ""
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JBinaryExpression:10":
+                                        {
+                                            "operator": "/",
+                                            "type": "",
+                                            "Operand1":
+                                            {
+                                                "JBinaryExpression:10":
+                                                {
+                                                    "operator": "-",
+                                                    "type": "",
+                                                    "Operand1":
+                                                    {
+                                                        "JLiteralInt:10":
+                                                        {
+                                                            "type": "",
+                                                            "value": "14"
+                                                        }
+                                                    },
+                                                    "Operand2":
+                                                    {
+                                                        "JVariable:10":
+                                                        {
+                                                            "name": "m",
+                                                            "type": ""
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "Operand2":
+                                            {
+                                                "JLiteralInt:10":
+                                                {
+                                                    "type": "",
+                                                    "value": "12"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:11":
+                    {
+                        "JVariableDeclarator:11":
+                        {
+                            "name": "x0",
+                            "type": "int",
+                            "Initializer":
+                            {
+                                "JBinaryExpression:11":
+                                {
+                                    "operator": "+",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JBinaryExpression:11":
+                                        {
+                                            "operator": "-",
+                                            "type": "",
+                                            "Operand1":
+                                            {
+                                                "JBinaryExpression:11":
+                                                {
+                                                    "operator": "+",
+                                                    "type": "",
+                                                    "Operand1":
+                                                    {
+                                                        "JVariable:11":
+                                                        {
+                                                            "name": "y0",
+                                                            "type": ""
+                                                        }
+                                                    },
+                                                    "Operand2":
+                                                    {
+                                                        "JBinaryExpression:11":
+                                                        {
+                                                            "operator": "/",
+                                                            "type": "",
+                                                            "Operand1":
+                                                            {
+                                                                "JVariable:11":
+                                                                {
+                                                                    "name": "y0",
+                                                                    "type": ""
+                                                                }
+                                                            },
+                                                            "Operand2":
+                                                            {
+                                                                "JLiteralInt:11":
+                                                                {
+                                                                    "type": "",
+                                                                    "value": "4"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "Operand2":
+                                            {
+                                                "JBinaryExpression:11":
+                                                {
+                                                    "operator": "/",
+                                                    "type": "",
+                                                    "Operand1":
+                                                    {
+                                                        "JVariable:11":
+                                                        {
+                                                            "name": "y0",
+                                                            "type": ""
+                                                        }
+                                                    },
+                                                    "Operand2":
+                                                    {
+                                                        "JLiteralInt:11":
+                                                        {
+                                                            "type": "",
+                                                            "value": "100"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JBinaryExpression:11":
+                                        {
+                                            "operator": "/",
+                                            "type": "",
+                                            "Operand1":
+                                            {
+                                                "JVariable:11":
+                                                {
+                                                    "name": "y0",
+                                                    "type": ""
+                                                }
+                                            },
+                                            "Operand2":
+                                            {
+                                                "JUnaryExpression:11":
+                                                {
+                                                    "operator": "+",
+                                                    "type": "",
+                                                    "Operand":
+                                                    {
+                                                        "JLiteralInt:11":
+                                                        {
+                                                            "type": "",
+                                                            "value": "400"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:12":
+                    {
+                        "JVariableDeclarator:12":
+                        {
+                            "name": "m0",
+                            "type": "int",
+                            "Initializer":
+                            {
+                                "JBinaryExpression:12":
+                                {
+                                    "operator": "-",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JBinaryExpression:12":
+                                        {
+                                            "operator": "+",
+                                            "type": "",
+                                            "Operand1":
+                                            {
+                                                "JVariable:12":
+                                                {
+                                                    "name": "m",
+                                                    "type": ""
+                                                }
+                                            },
+                                            "Operand2":
+                                            {
+                                                "JBinaryExpression:12":
+                                                {
+                                                    "operator": "*",
+                                                    "type": "",
+                                                    "Operand1":
+                                                    {
+                                                        "JLiteralInt:12":
+                                                        {
+                                                            "type": "",
+                                                            "value": "12"
+                                                        }
+                                                    },
+                                                    "Operand2":
+                                                    {
+                                                        "JUnaryExpression:12":
+                                                        {
+                                                            "operator": "+",
+                                                            "type": "",
+                                                            "Operand":
+                                                            {
+                                                                "JBinaryExpression:12":
+                                                                {
+                                                                    "operator": "/",
+                                                                    "type": "",
+                                                                    "Operand1":
+                                                                    {
+                                                                        "JBinaryExpression:12":
+                                                                        {
+                                                                            "operator": "-",
+                                                                            "type": "",
+                                                                            "Operand1":
+                                                                            {
+                                                                                "JLiteralInt:12":
+                                                                                {
+                                                                                    "type": "",
+                                                                                    "value": "14"
+                                                                                }
+                                                                            },
+                                                                            "Operand2":
+                                                                            {
+                                                                                "JVariable:12":
+                                                                                {
+                                                                                    "name": "m",
+                                                                                    "type": ""
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "Operand2":
+                                                                    {
+                                                                        "JLiteralInt:12":
+                                                                        {
+                                                                            "type": "",
+                                                                            "value": "12"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JLiteralInt:12":
+                                        {
+                                            "type": "",
+                                            "value": "2"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:13":
+                    {
+                        "JVariableDeclarator:13":
+                        {
+                            "name": "dow",
+                            "type": "int",
+                            "Initializer":
+                            {
+                                "JBinaryExpression:13":
+                                {
+                                    "operator": "%",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JUnaryExpression:13":
+                                        {
+                                            "operator": "+",
+                                            "type": "",
+                                            "Operand":
+                                            {
+                                                "JBinaryExpression:13":
+                                                {
+                                                    "operator": "+",
+                                                    "type": "",
+                                                    "Operand1":
+                                                    {
+                                                        "JBinaryExpression:13":
+                                                        {
+                                                            "operator": "+",
+                                                            "type": "",
+                                                            "Operand1":
+                                                            {
+                                                                "JVariable:13":
+                                                                {
+                                                                    "name": "d",
+                                                                    "type": ""
+                                                                }
+                                                            },
+                                                            "Operand2":
+                                                            {
+                                                                "JVariable:13":
+                                                                {
+                                                                    "name": "x0",
+                                                                    "type": ""
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "Operand2":
+                                                    {
+                                                        "JBinaryExpression:13":
+                                                        {
+                                                            "operator": "/",
+                                                            "type": "",
+                                                            "Operand1":
+                                                            {
+                                                                "JBinaryExpression:13":
+                                                                {
+                                                                    "operator": "*",
+                                                                    "type": "",
+                                                                    "Operand1":
+                                                                    {
+                                                                        "JLiteralInt:13":
+                                                                        {
+                                                                            "type": "",
+                                                                            "value": "31"
+                                                                        }
+                                                                    },
+                                                                    "Operand2":
+                                                                    {
+                                                                        "JVariable:13":
+                                                                        {
+                                                                            "name": "m0",
+                                                                            "type": ""
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "Operand2":
+                                                            {
+                                                                "JLiteralInt:13":
+                                                                {
+                                                                    "type": "",
+                                                                    "value": "12"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JLiteralInt:13":
+                                        {
+                                            "type": "",
+                                            "value": "7"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:15":
+                    {
+                        "JVariableDeclarator:15":
+                        {
+                            "name": "a",
+                            "type": "String[]",
+                            "Initializer":
+                            {
+                                "JArrayInitializer:15":
+                                {
+                                    "JLiteralString:15":
+                                    {
+                                        "type": "",
+                                        "value": "Sunday"
+                                    },
+                                    "JLiteralString:15":
+                                    {
+                                        "type": "",
+                                        "value": "Monday"
+                                    },
+                                    "JLiteralString:15":
+                                    {
+                                        "type": "",
+                                        "value": "Tuesday"
+                                    },
+                                    "JLiteralString:15":
+                                    {
+                                        "type": "",
+                                        "value": "Wednesday"
+                                    },
+                                    "JLiteralString:15":
+                                    {
+                                        "type": "",
+                                        "value": "Thursday"
+                                    },
+                                    "JLiteralString:15":
+                                    {
+                                        "type": "",
+                                        "value": "Friday"
+                                    },
+                                    "JLiteralString:15":
+                                    {
+                                        "type": "",
+                                        "value": "Saturday"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JStatementExpression:17":
+                    {
+                        "JMessageExpression:17":
+                        {
+                            "ambiguousPart": "System.out",
+                            "name": "println",
+                            "Argument":
+                            {
+                                "JArrayExpression:17":
+                                {
+                                    "TheArray":
+                                    {
+                                        "JVariable:17":
+                                        {
+                                            "name": "a",
+                                            "type": ""
+                                        }
+                                    },
+                                    "TheIndex":
+                                    {
+                                        "JUnaryExpression:17":
+                                        {
+                                            "operator": "+",
+                                            "type": "",
+                                            "Operand":
+                                            {
+                                                "JVariable:17":
+                                                {
+                                                    "name": "dow",
+                                                    "type": ""
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

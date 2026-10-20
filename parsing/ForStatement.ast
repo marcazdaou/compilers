@@ -1,0 +1,188 @@
+{
+    "JCompilationUnit:1":
+    {
+        "source": "parsing/ForStatement.java",
+        "imports": ["java.lang.Integer", "java.lang.System"],
+        "JClassDeclaration:4":
+        {
+            "modifiers": ["public"],
+            "name": "ForStatement",
+            "super": "java.lang.Object",
+            "JMethodDeclaration:5":
+            {
+                "modifiers": ["public", "static"],
+                "returnType": "void",
+                "name": "main",
+                "parameters": [["args", "String[]"]],
+                "JBlock:5":
+                {
+                    "JVariableDeclaration:6":
+                    {
+                        "JVariableDeclarator:6":
+                        {
+                            "name": "n",
+                            "type": "int",
+                            "Initializer":
+                            {
+                                "JMessageExpression:6":
+                                {
+                                    "ambiguousPart": "Integer",
+                                    "name": "parseInt",
+                                    "Argument":
+                                    {
+                                        "JArrayExpression:6":
+                                        {
+                                            "TheArray":
+                                            {
+                                                "JVariable:6":
+                                                {
+                                                    "name": "args",
+                                                    "type": ""
+                                                }
+                                            },
+                                            "TheIndex":
+                                            {
+                                                "JLiteralInt:6":
+                                                {
+                                                    "type": "",
+                                                    "value": "0"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:8":
+                    {
+                        "JVariableDeclarator:8":
+                        {
+                            "name": "sum",
+                            "type": "int",
+                            "Initializer":
+                            {
+                                "JLiteralInt:8":
+                                {
+                                    "type": "",
+                                    "value": "0"
+                                }
+                            }
+                        }
+                    },
+                    "JForStatement:9":
+                    {
+                        "Init":
+                        {
+                            "JVariableDeclaration:9":
+                            {
+                                "JVariableDeclarator:9":
+                                {
+                                    "name": "i",
+                                    "type": "int",
+                                    "Initializer":
+                                    {
+                                        "JLiteralInt:9":
+                                        {
+                                            "type": "",
+                                            "value": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "Condition":
+                        {
+                            "JBinaryExpression:9":
+                            {
+                                "operator": "<=",
+                                "type": "",
+                                "Operand1":
+                                {
+                                    "JVariable:9":
+                                    {
+                                        "name": "i",
+                                        "type": ""
+                                    }
+                                },
+                                "Operand2":
+                                {
+                                    "JVariable:9":
+                                    {
+                                        "name": "n",
+                                        "type": ""
+                                    }
+                                }
+                            }
+                        },
+                        "Update":
+                        {
+                            "JStatementExpression:9":
+                            {
+                                "JUnaryExpression:9":
+                                {
+                                    "operator": "++ (post)",
+                                    "type": "",
+                                    "Operand":
+                                    {
+                                        "JVariable:9":
+                                        {
+                                            "name": "i",
+                                            "type": ""
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "Body":
+                        {
+                            "JBlock:9":
+                            {
+                                "JStatementExpression:10":
+                                {
+                                    "JBinaryExpression:10":
+                                    {
+                                        "operator": "+=",
+                                        "type": "",
+                                        "Operand1":
+                                        {
+                                            "JVariable:10":
+                                            {
+                                                "name": "sum",
+                                                "type": ""
+                                            }
+                                        },
+                                        "Operand2":
+                                        {
+                                            "JVariable:10":
+                                            {
+                                                "name": "i",
+                                                "type": ""
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JStatementExpression:13":
+                    {
+                        "JMessageExpression:13":
+                        {
+                            "ambiguousPart": "System.out",
+                            "name": "println",
+                            "Argument":
+                            {
+                                "JVariable:13":
+                                {
+                                    "name": "sum",
+                                    "type": ""
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

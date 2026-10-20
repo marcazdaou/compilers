@@ -1,0 +1,559 @@
+{
+    "JCompilationUnit:1":
+    {
+        "source": "javacc_frontend/SwitchStatement.java",
+        "imports": ["java.lang.Integer", "java.lang.System", "java.util.Random"],
+        "JClassDeclaration:5":
+        {
+            "modifiers": ["public"],
+            "name": "SwitchStatement",
+            "super": "java.lang.Object",
+            "JMethodDeclaration:6":
+            {
+                "modifiers": ["public", "static"],
+                "returnType": "void",
+                "name": "main",
+                "parameters": [["args", "String[]"]],
+                "JBlock:6":
+                {
+                    "JVariableDeclaration:7":
+                    {
+                        "JVariableDeclarator:7":
+                        {
+                            "name": "rng",
+                            "type": "Random",
+                            "Initializer":
+                            {
+                                "JNewOp:7":
+                                {
+                                    "type": "Random"
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:8":
+                    {
+                        "JVariableDeclarator:8":
+                        {
+                            "name": "rank",
+                            "type": "int",
+                            "Initializer":
+                            {
+                                "JBinaryExpression:8":
+                                {
+                                    "operator": "+",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JLiteralInt:8":
+                                        {
+                                            "type": "",
+                                            "value": "1"
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JMessageExpression:8":
+                                        {
+                                            "ambiguousPart": "rng",
+                                            "name": "nextInt",
+                                            "Argument":
+                                            {
+                                                "JLiteralInt:8":
+                                                {
+                                                    "type": "",
+                                                    "value": "13"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:9":
+                    {
+                        "JVariableDeclarator:9":
+                        {
+                            "name": "suit",
+                            "type": "int",
+                            "Initializer":
+                            {
+                                "JBinaryExpression:9":
+                                {
+                                    "operator": "+",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JLiteralInt:9":
+                                        {
+                                            "type": "",
+                                            "value": "1"
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JMessageExpression:9":
+                                        {
+                                            "ambiguousPart": "rng",
+                                            "name": "nextInt",
+                                            "Argument":
+                                            {
+                                                "JLiteralInt:9":
+                                                {
+                                                    "type": "",
+                                                    "value": "4"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:11":
+                    {
+                        "JVariableDeclarator:11":
+                        {
+                            "name": "rankStr",
+                            "type": "String",
+                            "Initializer":
+                            {
+                                "JLiteralString:11":
+                                {
+                                    "type": "",
+                                    "value": ""
+                                }
+                            }
+                        }
+                    },
+                    "JSwitchStatement:12":
+                    {
+                        "Condition":
+                        {
+                            "JVariable:12":
+                            {
+                                "name": "rank",
+                                "type": ""
+                            }
+                        },
+                        "SwitchStatementGroup":
+                        {
+                            "Case":
+                            {
+                                "JLiteralInt:13":
+                                {
+                                    "type": "",
+                                    "value": "1"
+                                }
+                            },
+                            "JStatementExpression:14":
+                            {
+                                "JBinaryExpression:14":
+                                {
+                                    "operator": "=",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JVariable:14":
+                                        {
+                                            "name": "rankStr",
+                                            "type": ""
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JLiteralString:14":
+                                        {
+                                            "type": "",
+                                            "value": "Ace"
+                                        }
+                                    }
+                                }
+                            },
+                            "JBreakStatement:15":
+                            {
+                            }
+                        },
+                        "SwitchStatementGroup":
+                        {
+                            "Case":
+                            {
+                                "JLiteralInt:16":
+                                {
+                                    "type": "",
+                                    "value": "11"
+                                }
+                            },
+                            "JStatementExpression:17":
+                            {
+                                "JBinaryExpression:17":
+                                {
+                                    "operator": "=",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JVariable:17":
+                                        {
+                                            "name": "rankStr",
+                                            "type": ""
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JLiteralString:17":
+                                        {
+                                            "type": "",
+                                            "value": "Jack"
+                                        }
+                                    }
+                                }
+                            },
+                            "JBreakStatement:18":
+                            {
+                            }
+                        },
+                        "SwitchStatementGroup":
+                        {
+                            "Case":
+                            {
+                                "JLiteralInt:19":
+                                {
+                                    "type": "",
+                                    "value": "12"
+                                }
+                            },
+                            "JStatementExpression:20":
+                            {
+                                "JBinaryExpression:20":
+                                {
+                                    "operator": "=",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JVariable:20":
+                                        {
+                                            "name": "rankStr",
+                                            "type": ""
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JLiteralString:20":
+                                        {
+                                            "type": "",
+                                            "value": "Queen"
+                                        }
+                                    }
+                                }
+                            },
+                            "JBreakStatement:21":
+                            {
+                            }
+                        },
+                        "SwitchStatementGroup":
+                        {
+                            "Case":
+                            {
+                                "JLiteralInt:22":
+                                {
+                                    "type": "",
+                                    "value": "13"
+                                }
+                            },
+                            "JStatementExpression:23":
+                            {
+                                "JBinaryExpression:23":
+                                {
+                                    "operator": "=",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JVariable:23":
+                                        {
+                                            "name": "rankStr",
+                                            "type": ""
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JLiteralString:23":
+                                        {
+                                            "type": "",
+                                            "value": "King"
+                                        }
+                                    }
+                                }
+                            },
+                            "JBreakStatement:24":
+                            {
+                            }
+                        },
+                        "SwitchStatementGroup":
+                        {
+                            "Default":
+                            {
+                            },
+                            "JStatementExpression:26":
+                            {
+                                "JBinaryExpression:26":
+                                {
+                                    "operator": "=",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JVariable:26":
+                                        {
+                                            "name": "rankStr",
+                                            "type": ""
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JMessageExpression:26":
+                                        {
+                                            "ambiguousPart": "String",
+                                            "name": "valueOf",
+                                            "Argument":
+                                            {
+                                                "JVariable:26":
+                                                {
+                                                    "name": "rank",
+                                                    "type": ""
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JVariableDeclaration:29":
+                    {
+                        "JVariableDeclarator:29":
+                        {
+                            "name": "suitStr",
+                            "type": "String",
+                            "Initializer":
+                            {
+                                "JLiteralString:29":
+                                {
+                                    "type": "",
+                                    "value": ""
+                                }
+                            }
+                        }
+                    },
+                    "JSwitchStatement:30":
+                    {
+                        "Condition":
+                        {
+                            "JVariable:30":
+                            {
+                                "name": "suit",
+                                "type": ""
+                            }
+                        },
+                        "SwitchStatementGroup":
+                        {
+                            "Case":
+                            {
+                                "JLiteralInt:31":
+                                {
+                                    "type": "",
+                                    "value": "1"
+                                }
+                            },
+                            "JStatementExpression:32":
+                            {
+                                "JBinaryExpression:32":
+                                {
+                                    "operator": "=",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JVariable:32":
+                                        {
+                                            "name": "suitStr",
+                                            "type": ""
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JLiteralString:32":
+                                        {
+                                            "type": "",
+                                            "value": "Spades"
+                                        }
+                                    }
+                                }
+                            },
+                            "JBreakStatement:33":
+                            {
+                            }
+                        },
+                        "SwitchStatementGroup":
+                        {
+                            "Case":
+                            {
+                                "JLiteralInt:34":
+                                {
+                                    "type": "",
+                                    "value": "2"
+                                }
+                            },
+                            "JStatementExpression:35":
+                            {
+                                "JBinaryExpression:35":
+                                {
+                                    "operator": "=",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JVariable:35":
+                                        {
+                                            "name": "suitStr",
+                                            "type": ""
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JLiteralString:35":
+                                        {
+                                            "type": "",
+                                            "value": "Hearts"
+                                        }
+                                    }
+                                }
+                            },
+                            "JBreakStatement:36":
+                            {
+                            }
+                        },
+                        "SwitchStatementGroup":
+                        {
+                            "Case":
+                            {
+                                "JLiteralInt:37":
+                                {
+                                    "type": "",
+                                    "value": "3"
+                                }
+                            },
+                            "JStatementExpression:38":
+                            {
+                                "JBinaryExpression:38":
+                                {
+                                    "operator": "=",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JVariable:38":
+                                        {
+                                            "name": "suitStr",
+                                            "type": ""
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JLiteralString:38":
+                                        {
+                                            "type": "",
+                                            "value": "Diamonds"
+                                        }
+                                    }
+                                }
+                            },
+                            "JBreakStatement:39":
+                            {
+                            }
+                        },
+                        "SwitchStatementGroup":
+                        {
+                            "Case":
+                            {
+                                "JLiteralInt:40":
+                                {
+                                    "type": "",
+                                    "value": "4"
+                                }
+                            },
+                            "JStatementExpression:41":
+                            {
+                                "JBinaryExpression:41":
+                                {
+                                    "operator": "=",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JVariable:41":
+                                        {
+                                            "name": "suitStr",
+                                            "type": ""
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JLiteralString:41":
+                                        {
+                                            "type": "",
+                                            "value": "Clubs"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "JStatementExpression:44":
+                    {
+                        "JMessageExpression:44":
+                        {
+                            "ambiguousPart": "System.out",
+                            "name": "println",
+                            "Argument":
+                            {
+                                "JBinaryExpression:44":
+                                {
+                                    "operator": "+",
+                                    "type": "",
+                                    "Operand1":
+                                    {
+                                        "JBinaryExpression:44":
+                                        {
+                                            "operator": "+",
+                                            "type": "",
+                                            "Operand1":
+                                            {
+                                                "JVariable:44":
+                                                {
+                                                    "name": "rankStr",
+                                                    "type": ""
+                                                }
+                                            },
+                                            "Operand2":
+                                            {
+                                                "JLiteralString:44":
+                                                {
+                                                    "type": "",
+                                                    "value": " of "
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Operand2":
+                                    {
+                                        "JVariable:44":
+                                        {
+                                            "name": "suitStr",
+                                            "type": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

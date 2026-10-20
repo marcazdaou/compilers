@@ -1,0 +1,17 @@
+@echo off
+
+REM Wrapper script for running jminusminus.Main program.
+
+set BASE_DIR=%~dp0
+set j="%BASE_DIR%\..\..\"
+set JAVA=java
+set CPATH="%BASE_DIR%\..\lib\j--.jar;%BASE_DIR%\..\lib\spim.jar"
+if "%CLASSPATH%" == "" goto runApp
+set CPATH=%CPATH%;"%CLASSPATH%"
+
+:runApp
+%JAVA% -classpath %CPATH% jminusminus.Main "j--" %*
+
+set JAVA=
+set BASE_DIR=
+set CPATH=
