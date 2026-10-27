@@ -10,6 +10,26 @@ through every stage of the compiler: scanner, parser (hand-written and JavaCC), 
 The test suite checks the scanner and parser against expected output, and checks code generation **against `javac`
 itself**: every test program is compiled by both compilers, run on the JVM, and must print exactly the same output.
 
+## How it works
+
+```mermaid
+flowchart LR
+    A["Program.java<br/>j-- source"] --> B["Scanner<br/>tokens"]
+    B --> C["Parser<br/>hand-written or JavaCC"]
+    C --> D["AST"]
+    D --> E["preAnalyze()<br/>declare members"]
+    E --> F["analyze()<br/>types and locals"]
+    F --> G["codegen()<br/>CLEmitter"]
+    G --> H["Program.class<br/>JVM bytecode"]
+    H --> J["java"]
+    A --> K["javac"]
+    K --> L["java"]
+    J --> M{"Same output?"}
+    L --> M
+```
+
+The top row is the compiler; the comparison with `javac` at the bottom is how the tests check code generation.
+
 ## What I added
 
 | Area | Features |
